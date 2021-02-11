@@ -110,7 +110,6 @@
                     "PIPELINE_NAME=object_detection",
                     "PIPELINE_VERSION=person_vehicle_bike_detection",
                     "PIPELINE_PARAMETERS={\"detection-device\":\"GPU\"}",
-                    "LOG_LEVEL=DEBUG"
                   ],
                   "HostConfig": {
                       "Binds": [
