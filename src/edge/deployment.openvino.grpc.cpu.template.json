@@ -100,7 +100,7 @@
               "status": "running",
               "restartPolicy": "always",
               "settings": {
-                "image": "{URL TO YOUR INTEL SERVING IMAGE ON AZURE CONTAINER REGISTRY}",
+                "image": "intel/video-analytics-serving:0.4.1-dlstreamer-edge-ai-extension",
                 "createOptions": {
                     "ExposedPorts": {
                       "80/tcp": {},
