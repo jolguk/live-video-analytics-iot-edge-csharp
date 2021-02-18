@@ -32,6 +32,14 @@ In addition to the modules defined in deployment.template.json, this deployment 
 
 In addition to the modules defined in deployment.yolov3.template.json, this deployment manifest template includes the sample objectCounter module (source code for which can be found in ./modules/objectCounter). This template also has message routes defined to send messages from the lvaEdge module to the objectCounter module and vice versa, to enable the scenario of recording video clips when objects of a specified type (at a confidence measure above a specified threshold value) are found. See [this](https://docs.microsoft.com/azure/media-services/live-video-analytics-edge/event-based-video-recording-tutorial) tutorial on using this template.
 
+### deployment.openvino.grpc.cpu.template.json
+
+In addition to the modules defined in deployment.template.json, this deployment manifest template includes the [OpenVINO™ DL Streamer – Edge AI Extension Module](https://aka.ms/lva-intel-openvino-dl-streamer) module. This module serves video analytics pipelines built with OpenVINO™ DL Streamer. Developers can send decoded video frames to the AI extension module which performs detection, classification, or tracking and returns the results. The AI extension module exposes gRPC APIs with support for high frame rates (i.e. 30fps). This template is used in [this](https://aka.ms/lva-intel-openvino-dl-streamer-tutorial) tutorial.
+
+### deployment.openvino.grpc.gpu.template.json
+
+This template is the same as defined in deployment.openvino.grpc.cpu.template.json, but here the GPU support is enabled so that the inferencing will use the GPU. This deployment manifest template includes the [OpenVINO™ DL Streamer – Edge AI Extension Module](https://aka.ms/lva-intel-openvino-dl-streamer) module. This module serves video analytics pipelines built with OpenVINO™ DL Streamer. Developers can send decoded video frames to the AI extension module which performs detection, classification, or tracking and returns the results. The AI extension module exposes gRPC APIs with support for high frame rates (i.e. 30fps). This template is used in [this](https://aka.ms/lva-intel-openvino-dl-streamer-tutorial) tutorial.
+
 ### deployment.openvino.template.json  
 
 In addition to the modules defined in deployment.template.json, this deployment manifest template includes the [OpenVINO™ Model Server – AI Extension](https://aka.ms/lva-intel-ovms) module. This inference server module contains the OpenVINO™ Model Server (OVMS), an inference server powered by the OpenVINO™ toolkit, that is highly optimized for computer vision workloads and developed for Intel architectures. This template is used in [this](https://aka.ms/lva-intel-ovms-tutorial) tutorial.
