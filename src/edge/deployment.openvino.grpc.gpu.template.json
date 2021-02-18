@@ -100,7 +100,7 @@
               "status": "running",
               "restartPolicy": "always",
               "settings": {
-                "image": "lvasampleregistrymknbybwrljer2.azurecr.io/video-analytics-serving:0.4.1",
+                "image": "intel/video-analytics-serving:0.4.1-dlstreamer-edge-ai-extension",
                 "createOptions": {
                     "ExposedPorts": {
                       "80/tcp": {},
