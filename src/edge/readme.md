@@ -34,11 +34,11 @@ In addition to the modules defined in deployment.yolov3.template.json, this depl
 
 ### deployment.openvino.grpc.cpu.template.json
 
-In addition to the modules defined in deployment.template.json, this deployment manifest template includes the [OpenVINO™ DL Streamer – Edge AI Extension Module](https://aka.ms/lva-intel-openvino-dl-streamer) module. This module serves video analytics pipelines built with OpenVINO™ DL Streamer. Developers can send decoded video frames to the AI extension module which performs detection, classification, or tracking and returns the results. The AI extension module exposes gRPC APIs with support for high frame rates (i.e. 30fps). This template is used in [this](https://aka.ms/lva-intel-openvino-dl-streamer-tutorial) tutorial.
+In addition to the modules defined in deployment.template.json, this deployment manifest template includes the [OpenVINO™ DL Streamer – Edge AI Extension Module](https://aka.ms/lva-intel-openvino-dl-streamer) module. This module serves video analytics pipelines built with OpenVINO™ DL Streamer. Developers can send decoded video frames to the AI extension module which performs detection, classification, or tracking and returns the results. The AI extension module exposes gRPC APIs with support for high frame rates (i.e. 30fps). This template is used in [this](https://aka.ms/lva-intel-grpc) tutorial.
 
 ### deployment.openvino.grpc.gpu.template.json
 
-This template is the same as defined in deployment.openvino.grpc.cpu.template.json, but here the GPU support is enabled so that the inferencing will use the GPU. This deployment manifest template includes the [OpenVINO™ DL Streamer – Edge AI Extension Module](https://aka.ms/lva-intel-openvino-dl-streamer) module. This module serves video analytics pipelines built with OpenVINO™ DL Streamer. Developers can send decoded video frames to the AI extension module which performs detection, classification, or tracking and returns the results. The AI extension module exposes gRPC APIs with support for high frame rates (i.e. 30fps). This template is used in [this](https://aka.ms/lva-intel-openvino-dl-streamer-tutorial) tutorial.
+This template is the same as defined in deployment.openvino.grpc.cpu.template.json, but here the GPU support is enabled so that the inferencing will use the GPU. This deployment manifest template includes the [OpenVINO™ DL Streamer – Edge AI Extension Module](https://aka.ms/lva-intel-openvino-dl-streamer) module. This module serves video analytics pipelines built with OpenVINO™ DL Streamer. Developers can send decoded video frames to the AI extension module which performs detection, classification, or tracking and returns the results. The AI extension module exposes gRPC APIs with support for high frame rates (i.e. 30fps). This template is used in [this](https://aka.ms/lva-intel-grpc) tutorial.
 
 ### deployment.openvino.template.json  
 
@@ -68,8 +68,8 @@ IOTHUB_CONNECTION_STRING="<IoT Hub connection string>"
 AAD_TENANT_ID="<your AAD tenant ID>"
 AAD_SERVICE_PRINCIPAL_ID="<your AAD service principal id>"
 AAD_SERVICE_PRINCIPAL_SECRET="<your AAD service principal secret>"
-VIDEO_INPUT_FOLDER_ON_DEVICE="<a folder on your edge device with MKV files, used by RTSP simulator>"
-VIDEO_OUTPUT_FOLDER_ON_DEVICE="<a folder on your edge device used for recording video clips>"
+INPUT_VIDEO_FOLDER_ON_DEVICE="<a folder on your edge device with MKV files, used by RTSP simulator>"
+OUTPUT_VIDEO_FOLDER_ON_DEVICE="<a folder on your edge device used for recording video clips>"
 APPDATA_FOLDER_ON_DEVICE="<a folder on your edge device used for storing application data>"
 CONTAINER_REGISTRY_USERNAME_myacr="<user name for your Azure Container Registry>"
 CONTAINER_REGISTRY_PASSWORD_myacr="<password for the registry>"
