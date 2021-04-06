@@ -72,7 +72,7 @@ Let's decompose it a bit:
 * `registry/image:tag`: replace this with the corresponding location/image:tag where you've pushed the image built from the `Dockerfile`
 
 ### Updating references into Topologies, to target the HTTPS inferencing container address
-The topology (i.e. https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/httpExtension/topology.json) must define an inferencing URL:
+The topology (i.e. https://github.com/Azure/live-video-analytics/blob/master/MediaGraph/topologies/httpExtension/2.0/topology.json) must define an inferencing URL:
 
 * Url Parameter
 ```
@@ -83,12 +83,8 @@ The topology (i.e. https://github.com/Azure/live-video-analytics/blob/master/Med
   "default": "https://<REPLACE-WITH-IP-OR-CONTAINER-NAME>/score"
 }
 ```
-* Configuration
+* Note the configuration of the extension processor
 ```
-{
-  "@apiVersion": "1.0",
-  "name": "TopologyName",
-  "properties": {
     "processors": [
       {
         "@type": "#Microsoft.Media.MediaGraphHttpExtension",
@@ -102,6 +98,10 @@ The topology (i.e. https://github.com/Azure/live-video-analytics/blob/master/Med
             "password": "${inferencingPassword}"
           }
         },
+        "samplingOptions": {
+          "skipSamplesWithoutAnnotation": "false",
+          "maximumSamplesPerSecond": "5"
+        },
         "image": {
           "scale":
           {
@@ -109,17 +109,13 @@ The topology (i.e. https://github.com/Azure/live-video-analytics/blob/master/Med
             "width": "416",
             "height": "416"
           },
-          "format":
-          {
-            "@type": "#Microsoft.Media.MediaGraphImageFormatEncoded",
-            "encoding": "jpeg",
-            "quality": "90"
+          "format": {
+            "@type": "#Microsoft.Media.MediaGraphImageFormatBmp"
           }
         }
       }
     ]
-  }
-}
+
 ```
 ## Using the http extension container
 
